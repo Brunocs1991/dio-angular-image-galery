@@ -1,0 +1,16 @@
+<div class="search-bar">
+  <input type="text" placeholder="Search" [(ngModel)]="searchTerm" class="form-control" />
+</div>
+<div class="gallery">
+  <div *ngIf="filterImages().length === 0" class="no-results">
+    No images found.
+  </div>
+  <div class="image-card" *ngFor="let img of filterImages()">
+    <div class="image-container">
+      <img [src]="img.url" alt="{{img.title}}" />
+    </div>
+    <div class="image-title">
+      {{img.title}}
+    </div>
+  </div>
+</div>
